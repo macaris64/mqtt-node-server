@@ -7,28 +7,35 @@
     <title>mqtt Web Client</title>
 </head>
 <body>
+    <button onclick="led('1')">LED On</button>
+    <button onclick="led('0')">LED Off</button>
 
-<script src="https://unpkg.com/mqtt@3.0.0/dist/mqtt.min.js"></script>
-<script>
+    <script src="https://unpkg.com/mqtt@3.0.0/dist/mqtt.min.js"></script>
+    <script>
     //console.log(mqtt);
-    var client = mqtt.connect('ws://127.0.0.1:3000');
+        var client = mqtt.connect('ws://127.0.0.1:3000');
 
-    client.on('connect', () => {
-        console.log('a client has been connected');
+        client.on('connect', () => {
+            console.log('a client has been connected');
 
-        client.subscribe('new-user',(err) => {
-            if(!err) {
-                client.publish('new-user', 'FromBrowserClient-Ayşe');
-            }
-            else {
-                console.log(err.message);
-            }
-        })
+            client.subscribe('new-user',(err) => {
+                if(!err) {
+                    client.publish('new-user', 'FromBrowserClient-Ayşe');
+                }
+                else {
+                    console.log(err.message);
+                }
+            });
     });
 
-    client.on('message', (topic, message) => {
-        console.log(topic, ' : ', message.toString())
-    });
+        client.on('message', (topic, message) => {
+            console.log(topic, ' : ', message.toString())
+        });
+
+        function led(value) {
+            //alert('led on');
+            client.publish('led', value);
+        }
 </script>
 </body>
 </html>

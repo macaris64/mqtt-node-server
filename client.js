@@ -11,6 +11,15 @@ client.on('connect', () => {
         else {
             console.log(err.message);
         }
+    });
+
+    client.subscribe('led', (err) => {
+        if(!err) {
+            client.publish('new-user', 'Mehmet');
+        }
+        else {
+            console.log(err.message);
+        }
     })
 });
 
