@@ -2,8 +2,9 @@
   "name": "mqtt-node-server",
   "version": "1.0.0",
   "description": "mqtt server with node.js",
-  "main": "mqtt.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,10 @@
   },
   "homepage": "https://github.com/macaris64/mqtt-node-server#readme",
   "dependencies": {
-    "mosca": "^2.8.3"
+    "mosca": "^2.8.3",
+    "mqtt": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
