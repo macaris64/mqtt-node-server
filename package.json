@@ -1,0 +1,25 @@
+{
+  "name": "mqtt-node-server",
+  "version": "1.0.0",
+  "description": "mqtt server with node.js",
+  "main": "mqtt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macaris64/mqtt-node-server.git"
+  },
+  "keywords": [
+    "mqtt"
+  ],
+  "author": "macaris64",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macaris64/mqtt-node-server/issues"
+  },
+  "homepage": "https://github.com/macaris64/mqtt-node-server#readme",
+  "dependencies": {
+    "mosca": "^2.8.3"
+  }
+}
