@@ -4,3 +4,4 @@ Node.js MQTT Server
 + mosca.js
 + mqtt.js
 + nodemon
++ wscat -> websocket connection module
