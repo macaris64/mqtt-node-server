@@ -6,7 +6,7 @@ client.on('connect', () => {
 
     client.subscribe('new-user',(err) => {
         if(!err) {
-            client.publish('new-user', 'Mehmet');
+            client.publish('new-user', 'Ahmet');
         }
         else {
             console.log(err.message);
